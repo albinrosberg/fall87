@@ -7,47 +7,113 @@
         <title>Journalisten</title> 
         <link rel='stylesheet' href='style.css'>
         <style>
-        	body {
-                text-align: center;
-                background-image: linear-gradient(to left, rgb(45, 43, 43) 50%, mistyrose 50%);
-                color:aliceblue;
-            }
-            #information {
-                width: 50%;
-                float: left;
-                color: rgb(45, 43, 43);
-            }
-            #id {
-                width: 50%;
-                float: left;
-                color:mistyrose;  
-            }
-            h2 {
-                text-align: left;
-                padding-left: 25px;
-            }
-            img {
-                height: 45%;
-            }
-            #info {
-                width: 100%;
-                padding: 12px;
-                text-align: center;
-            }
-            #scanCounter {
-                position:absolute;
-                top:5px;
-                right:5px;
-                background:rgb(45, 43, 43);
-                color:mistyrose;
-                padding:4px 8px;
-                border-radius:8px;
-            }
+body {
+    margin: 0;
+    text-align: center;
+    font-family: "Courier New", monospace;
+
+    background: linear-gradient(to left, #2b2b2b 50%, #f5e6e8 50%);
+    color: #2b2b2b;
+}
+
+#id {
+    width: 50%;
+    float: left;
+    color: #f5e6e8;
+    padding-top: 20px;
+}
+
+#information {
+    width: 50%;
+    float: left;
+    background: #f5e6e8;
+    color: #2b2b2b;
+    min-height: 100vh;
+}
+
+h2 {
+    text-align: left;
+    padding-left: 25px;
+    border-left: 4px solid #b04a5a; 
+    padding-left: 10px;
+}
+
+img {
+    height: 45%;
+    border: 3px solid #8c3b4a;
+    border-radius: 6px;
+}
+
+#info {
+    width: 100%;
+    padding: 12px;
+    text-align: center;
+    border-top: 2px solid #b04a5a;
+    border-bottom: 2px solid #b04a5a;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+#information::before {
+    display: block;
+    text-align: left;
+    padding: 10px 20px;
+    font-size: 0.8em;
+    letter-spacing: 2px;
+    color: #8c3b4a;
+}
+
+#scanCounter {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+
+    background: #2b2b2b;
+    color: #f5e6e8;
+
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #8c3b4a;
+
+    font-size: 0.9em;
+}
+#timeUpOverlay {
+    position: fixed;
+    inset: 0;
+
+    background: #0a0d10;
+    color: #ff3b3b;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#timeUpOverlay h1 {
+    font-size: 4em;
+    letter-spacing: 2px;
+}
+@media (max-width: 768px) {
+
+    #id, #information {
+        width: 100%;
+        float: none;
+    }
+
+    img {
+        width: 80%;
+        height: auto;
+    }
+}
         </style>
     </head>
     
     <body>
         <div id="information">
+        <br>
             <h1>Journalisten</h1>
             <table id="info">
                 <tr>
@@ -64,7 +130,9 @@
              <img src="../characters/images/c14.png" width = 52%, height = 52%>
         </div>
             <div id="scanCounter"></div>
-
+            <div id="timeUpOverlay">
+                <h1>Tiden är slut!</h1>
+            </div>
             
         <script>
          localStorage.setItem("playerRole", "journalist");
