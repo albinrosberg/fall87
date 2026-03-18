@@ -1,27 +1,78 @@
 <!doctype html>
-<!-- Kommentarer --> 
-
 <html lang='sv'>
-	<head> 
-        <meta charset='utf-8'>
-        <title>2 enheter</title> 
-        <link rel='stylesheet' href='style.css'>
-        <style>
-        	body {
-                text-align: center;
-                background-color: bisque;
-                color: black;
-                font-size: xx-large;
-            }
-        </style>
-    </head>
-    
-    <body>
-    	<script>
-            localStorage.setItem("timeLeft", 200); // minutes
-        </script>
+<head> 
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2 player</title> 
+    <link rel='stylesheet' href='style.css'>
 
-        <h1>Spelet startat för två enheter!</h1>
-        <p>Du har 3 timmar och 20 minuter på dig!</p>
-    </body> 
+    <style>
+        body {
+            margin: 0;
+            font-family: "Courier New", monospace;
+            background: #0f1a24;
+            color: #d6e2f0;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        #panel {
+            border: 2px solid #3a5a73;
+            padding: 40px;
+            border-radius: 8px;
+            background: #1c2f3f;
+            box-shadow: 0 0 20px rgba(0,0,0,0.6);
+        }
+
+        h1 {
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            opacity: 0.85;
+        }
+
+        #status {
+            margin-top: 20px;
+            color: #5fa8d3;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+
+            background: repeating-linear-gradient(
+                to bottom,
+                rgba(255,255,255,0.02),
+                rgba(255,255,255,0.02) 1px,
+                transparent 2px,
+                transparent 4px
+            );
+
+            pointer-events: none;
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="panel">
+        <h1>ENHET REGISTRERAD</h1>
+        <p>Speltid aktiverad</p>
+        <p id="status">Tilldelad tid: 3 timmar & 20 minuter</p>
+    </div>
+
+    <script>
+        localStorage.setItem("timeLeft", 200); 
+    </script>
+
+</body>
 </html>
