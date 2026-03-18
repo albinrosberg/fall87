@@ -3,120 +3,195 @@
 
 <html lang='sv'>
 	<head> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset='utf-8'>
         <title>Johan Geselius</title> 
         <link rel='stylesheet' href='style.css'>
         <style>
-        	body {
-                text-align: center;
-                background-image: linear-gradient(to right, rgb(45, 43, 43) 50%,  bisque 50%);
-                color:aliceblue;
-                margin: 0;
-            }
-            #name {
-                width: 50%;
-                float: left;
-                color: bisque;
-            }
-            #information {
-                width: 50%;
-                float: left;
-                color: rgb(45, 43, 43);
-            }
-            #story {
-                text-align: left;
-                padding-left: 25px;
-            }
-            img {
-                height: 45%;
-            }
-            #info {
-                width: 100%;
-                padding: 12px;
-                text-align: center;
-            }
-            hr {
-                border: none;
-                border-top: 3px solid black;
-            }
-            #next {
-                position: absolute;
-                right: 20px;
-                background-color: bisque;
-                border-radius: 23%;
-                border-color: transparent;
-                font-size: 105%;
-            }
-            button:hover {
-                color:forestgreen;
-            }
-            #news {
-                position: fixed;
-                left: 50%;
-                width: 50%;
-                border-collapse: collapse;
-                text-align: center;
-            }
 
-            #news th,
-            #news td {
-                width: 50%;
-                padding: 10px;
-                font-size: 135%;
-            }
-            p {
-                font-size: 120%;
-            }
-            #scanCounter {
-                position:absolute;
-                bottom:10px;
-                left:auto;
-                background:rgb(45, 43, 43);
-                color:bisque;
-                padding:8px 12px;
-                border-radius:8px;
-            }
-            #timeUpOverlay {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
+body {
+    text-align: center;
+    margin: 0;
+    font-family: "Courier New", monospace;
 
-                background: rgb(45, 43, 43);
-                color: red;
+    background: linear-gradient(to right, #0f1a24 50%, #e8d8b0 50%);
+    color: #d6e2f0;
+}
 
-                display: none; 
+#name {
+    width: 50%;
+    float: left;
+    color: #e8d8b0;
+    padding-top: 20px;
+}
 
-                justify-content: center;
-                align-items: center;
+#information {
+    width: 50%;
+    float: left;
+    color: #1a1a1a;
+    background: #e8d8b0;
+    min-height: 100vh;
+}
 
-                z-index: 9999;
-            }
+#story {
+    text-align: left;
+    padding: 20px;
+    font-size: 1.05em;
+    line-height: 1.5;
+}
 
-            #timeUpOverlay h1 {
-                font-size: 4em;
-                text-align: center;
-            }
+img {
+    height: 45%;
+    border: 3px solid #2f4f6b;
+    border-radius: 6px;
+}
 
-            @media (max-width: 768px) {
-                #criminalRecord, #trail {
-                    position: absolute;
-                    left: 12.5%;
-                    top: 250px;
-                    color: bisque;
-                }
-                 #news {
-                    position: absolute;
-                    left: 0;
-                    top: 250px;
-                    color: bisque;
-                    display: block;
-                 }
-                 #name {
-                    font-size: 87%;
-                 }
-            }
+#info {
+    width: 100%;
+    padding: 12px;
+    text-align: center;
+    border-top: 2px solid #2f4f6b;
+    border-bottom: 2px solid #2f4f6b;
+}
+
+hr {
+    border: none;
+    border-top: 2px solid #2f4f6b;
+    margin: 20px 0;
+}
+
+#next {
+    position: absolute;
+    right: 20px;
+
+    background: #1c2f3f;
+    color: #d6e2f0;
+
+    border: 2px solid #3a5a73;
+    border-radius: 6px;
+
+    padding: 8px 14px;
+    font-size: 105%;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#next:hover {
+    background: #27475f;
+    border-color: #5fa8d3;
+}
+
+#news {
+    position: absolute;
+    left: 50%;
+    width: 50%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+#news th,
+#news td {
+    width: 50%;
+    padding: 10px;
+    font-size: 135%;
+}
+
+p {
+    font-size: 120%;
+}
+
+#scanCounter {
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+
+    background: #1c2f3f;
+    color: #d6e2f0;
+
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #3a5a73;
+}
+
+#timeUpOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: #0a0f14;
+    color: #ff4d4d;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+}
+
+#timeUpOverlay h1 {
+    font-size: 4em;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.02),
+        rgba(255,255,255,0.02) 1px,
+        transparent 2px,
+        transparent 4px
+    );
+
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+
+    body {
+        background: #0f1a24; 
+    }
+
+    #name, #information {
+        width: 100%;
+        float: none;
+    }
+
+    #name {
+        font-size: 87%;
+    }
+    
+
+    #scanCounter {
+        top: 10px;
+        bottom: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 14px;
+        padding: 6px 10px;
+        opacity: 0.9;
+    }
+
+    #news {
+        position: static;   
+        width: 100%;
+        left: 0;
+        margin-top: 10px;
+}
+
+
+}
+
         </style>
     </head>
 
@@ -135,11 +210,10 @@
             <br> 
             <h2 id="story">"Lorem Ipsum is simply dummy text of the printing and typesetting t  typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."</h2>
             
-            <br><br><br>
+            <br>
             <button id="next" style="display:none;" onclick="location.href='c7b.html'">
                 Sida 2
             </button>
-            <br>
             <hr>
 
             <div id="criminalRecord" style="display:none;">
@@ -163,7 +237,7 @@
                 <p>Saknar tydliga spår</p>
             </div>
         </div>
-        <div id="scanCounter"></div>
+            <div id="scanCounter"></div>
             <div id="timeUpOverlay">
                 <h1>Tiden är slut!</h1>
             </div>
