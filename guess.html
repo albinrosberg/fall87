@@ -1,0 +1,128 @@
+<!doctype html>
+<!-- Kommentarer --> 
+
+<html lang='sv'>
+	<head> 
+        <meta charset='utf-8'>
+        <title>Gissning</title> 
+        <link rel='stylesheet' href='style.css'>
+        <style>
+        body {
+            margin: 0;
+            background: #0f1a24; 
+            color: #d6e2f0;
+            font-family: "Courier New", monospace;
+            text-align: center;
+        }
+
+        h1 {
+            background: #162635;
+            margin: 0;
+            padding: 20px;
+            border-bottom: 2px solid #2f4f6b;
+            letter-spacing: 2px;
+        }
+
+        #choices {
+            margin-top: 40px;
+        }
+
+        button {
+            display: block;
+            width: 80%;
+            max-width: 400px;
+            margin: 15px auto;
+            padding: 15px;
+
+            background: #1c2f3f;
+            color: #d6e2f0;
+
+            border: 2px solid #3a5a73;
+            border-radius: 6px;
+
+            font-size: 18px;
+            letter-spacing: 1px;
+
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        button:hover {
+            background: #27475f;
+            border-color: #5fa8d3;
+        }
+
+        #result {
+            margin-top: 40px;
+            padding: 20px;
+
+            border-top: 2px solid #2f4f6b;
+
+            font-size: 20px;
+            line-height: 1.5;
+        }
+
+        .correct {
+            color: #6cff6c;
+        }
+
+        .wrong {
+            color: #ff6c6c;
+        }
+        </style>
+    </head>
+    
+    <body>
+            <h1>POLISDATASYSTEM – FALL #087</h1>
+            <p style="opacity:0.7;">Välj misstänkt för identifiering</p>
+
+
+
+        <div id="choices">
+            <button onclick="guess('1')">1</button>
+            <button onclick="guess('2')">2</button>
+            <button onclick="guess('3')">3</button>
+            <button onclick="guess('4')">4</button>
+            <button onclick="guess('5')">5</button>
+            <button onclick="guess('6')">6</button>
+            <button onclick="guess('7')">7</button>
+            <button onclick="guess('8')">8</button>
+            <button onclick="guess('9')">9</button>
+            <button onclick="guess('10')">10</button>
+            <button onclick="guess('11')">11</button>
+            <button onclick="guess('12')">12</button>
+            <button onclick="guess('13')">13</button>
+            <button onclick="guess('14')">14</button>
+            <button onclick="guess('15')">15</button>
+            <button onclick="guess('16')">16</button>
+            <button onclick="guess('17')">17</button>
+            <button onclick="guess('18')">18</button>
+            <button onclick="guess('19')">19</button>
+            <button onclick="guess('20')">20</button>
+
+        </div>
+
+        <h2 id="result"></h2>
+
+        <script>
+            let alreadyGuessed = false;
+
+            function guess(choice) {
+            if (alreadyGuessed) return;
+
+            alreadyGuessed = true;
+
+            let correct = "19";
+            let result = document.getElementById("result");
+
+            if (choice === correct) {
+            result.className = "correct";
+            result.innerHTML = "✔ IDENTIFIERING BEKRÄFTAD<br>Du lyckades identifiera mördaren. Bra jobbat!";
+            } else {
+            result.className = "wrong";
+            result.innerHTML = "✖ FELAKTIG IDENTIFIERING<br>Mördaren är fortfarande på fri fot. Tack vare dig...";
+            }
+            }
+        </script>
+    </body> 
+</html>

@@ -1,0 +1,100 @@
+<!doctype html>
+<!-- Kommentarer --> 
+
+<html lang='sv'>
+	<head> 
+        <meta charset='utf-8'>
+        <title>Journalisten</title> 
+        <link rel='stylesheet' href='style.css'>
+        <style>
+        	body {
+                text-align: center;
+                background-image: linear-gradient(to left, rgb(45, 43, 43) 50%, mistyrose 50%);
+                color:aliceblue;
+            }
+            #information {
+                width: 50%;
+                float: left;
+                color: rgb(45, 43, 43);
+            }
+            #id {
+                width: 50%;
+                float: left;
+                color:mistyrose;  
+            }
+            h2 {
+                text-align: left;
+                padding-left: 25px;
+            }
+            img {
+                height: 45%;
+            }
+            #info {
+                width: 100%;
+                padding: 12px;
+                text-align: center;
+            }
+            #scanCounter {
+                position:absolute;
+                top:5px;
+                right:5px;
+                background:rgb(45, 43, 43);
+                color:mistyrose;
+                padding:4px 8px;
+                border-radius:8px;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div id="information">
+            <h1>Journalisten</h1>
+            <table id="info">
+                <tr>
+                    <td style="width:33%; text-align: center; font-size: 125%;">Uppgift:</td>
+                </tr>
+            </table>
+            <br> 
+            <h2>Din uppgift som journalist är att lyssna efter rykten om och från de personer du stöter på.</h2>
+            <h2>Utöver rykten har du även möjligheten att snabbt få information om personerna genom gamla nyheter.</h2>
+            <h2>Lyssna noga. Kanske är det dina öron som löser brottet!</h2>
+        </div>
+        <div id="id">
+            <h1> ID-kort </h1>
+             <img src="../characters/images/c14.png" width = 52%, height = 52%>
+        </div>
+            <div id="scanCounter"></div>
+
+            
+        <script>
+         localStorage.setItem("playerRole", "journalist");
+        </script>
+
+        <script>
+            let timeLeft = Number(localStorage.getItem("timeLeft"));
+
+            if (timeLeft === null) {
+            alert("Skanna startkoden först!");
+            }
+
+            timeLeft = Number(timeLeft);
+
+            if (timeLeft <= 0) {
+            document.getElementById("timeUpOverlay").style.display = "flex";
+        
+            } else {
+            timeLeft -= 10;
+            localStorage.setItem("timeLeft", timeLeft);
+            }
+        </script>
+        <script>
+            let time = Number(localStorage.getItem("timeLeft"));
+
+            let hours = Math.floor(time / 60);
+            let minutes = time % 60;
+
+            document.getElementById("scanCounter").innerText =
+            "Tid kvar: " + hours + "h " + minutes + "m";
+        </script>
+    </body> 
+</html>
