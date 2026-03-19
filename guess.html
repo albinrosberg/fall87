@@ -104,25 +104,31 @@
 
         <h2 id="result"></h2>
 
-        <script>
-            let alreadyGuessed = false;
+    <script>
+        let alreadyGuessed = false;
 
-            function guess(choice) {
-            if (alreadyGuessed) return;
+        function guess(choice) {
+        if (alreadyGuessed) return;
 
-            alreadyGuessed = true;
+        alreadyGuessed = true;
 
-            let correct = "19";
-            let result = document.getElementById("result");
+        let correct = "19";
+        let result = document.getElementById("result");
 
-            if (choice === correct) {
-            result.className = "correct";
-            result.innerHTML = "✔ IDENTIFIERING BEKRÄFTAD<br>Du lyckades identifiera mördaren. Bra jobbat!";
-            } else {
-            result.className = "wrong";
-            result.innerHTML = "✖ FELAKTIG IDENTIFIERING<br>Mördaren är fortfarande på fri fot. Tack vare dig...";
-            }
-            }
-        </script>
+        if (choice === correct) {
+        result.className = "correct";
+        result.innerHTML = "✔ IDENTIFIERING BEKRÄFTAD<br>Du lyckades identifiera mördaren. Bra jobbat!";
+        } else {
+        result.className = "wrong";
+        result.innerHTML = "✖ FELAKTIG IDENTIFIERING<br>Mördaren är fortfarande på fri fot. Tack vare dig...";
+        }
+
+        setTimeout(() => {
+        result.scrollIntoView({
+            behavior: "smooth"
+        });
+        }, 50);
+        }
+    </script>
     </body> 
 </html>

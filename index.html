@@ -80,10 +80,7 @@ tr {
         height: auto;
     }
 
-    #left, #right {
-        width: 100%;
-    }
-}
+ 
 
 body::after {
     content: "";
@@ -98,6 +95,7 @@ body::after {
 
     pointer-events: none;
     z-index: -1;
+}
 }
         </style>
     </head>
@@ -114,24 +112,38 @@ body::after {
 
     <div id="container">
 
-        <div id="left">
+        <div>
             <h1>VAD ÄR FALL #087?</h1>
             <p>
                 Fall #087 är ett interaktivt mordutredningsspel där spelare tar rollen
                 som utredare med olika specialförmågor. Genom att skanna QR-koder
-                samlar ni information och försöker lösa fallet innan tiden tar slut.
+                samlar ni information och försöker lösa fallet innan brottslingen kommer undan.
             </p>
         </div>
         <hr>
-        <div id="right">
+        <div>
             <h1>REGLER</h1>
             <ul>
-                <li>Upp till 3 spelare har en egen unik roll.</li>
+                <li>Upp till 3 enheter kan användas.</li>
+                <li>Vid spel med 3 enheter skall alla inneha var sin roll.</li>
+                <li>Vid spel med färre än 3 enheter kan man byta roll under spelets gång.</li>
                 <li>Skanna QR-koder för att få information.</li>
                 <li>Varje skanning kostar tid.</li>
+                <li>Alla roller måste inte skanna varje kort, men de olika rollerna kan ge er ny, viktig information</li>
                 <li>Samarbeta för att lösa fallet.</li>
                 <li>Gissa mördaren innan tiden tar slut.</li>
             </ul>
+        </div>
+        <hr>
+        <div>
+            <h1>Kom igång</h1>
+            <ol>
+                <li>Varje enhet som deltar skannar det kort som representerar antalet enheter som kommer användas.</li>
+                <li>Skanna QR-koden på ett rollkort för att få din roll.</li>
+                <li>Skanna QR-koden för karaktär #8.</li>
+                <br>
+                <li>När tiden är ute eller ni vill gissa skannar ni gissningskortet. Ni får bara gissa en gång!</li>
+            </ol>
         </div>
 
     </div>
