@@ -1,0 +1,292 @@
+<!doctype html>
+<!-- Kommentarer --> 
+
+<html lang='sv'>
+	<head> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset='utf-8'>
+        <title>Berit Åkerlund</title> 
+        <link rel='stylesheet' href='style.css'>
+        <style>
+
+body {
+    text-align: center;
+    margin: 0;
+    font-family: "Courier New", monospace;
+
+    background: linear-gradient(to right, #0f1a24 50%, #e8d8b0 50%);
+    color: #d6e2f0;
+}
+
+#name {
+    width: 50%;
+    float: left;
+    color: #e8d8b0;
+    padding-top: 20px;
+}
+
+#information {
+    width: 50%;
+    float: left;
+    color: #1a1a1a;
+    background: #e8d8b0;
+    min-height: 100vh;
+}
+
+#story {
+    text-align: left;
+    padding: 20px;
+    font-size: 1.05em;
+    line-height: 1.5;
+}
+
+img {
+    height: 45%;
+    border: 3px solid #2f4f6b;
+    border-radius: 6px;
+}
+
+#info {
+    width: 100%;
+    padding: 12px;
+    text-align: center;
+    border-top: 2px solid #2f4f6b;
+    border-bottom: 2px solid #2f4f6b;
+}
+
+hr {
+    border: none;
+    border-top: 2px solid #2f4f6b;
+    margin: 20px 0;
+}
+
+#next {
+    position: absolute;
+    right: 20px;
+
+    background: #1c2f3f;
+    color: #d6e2f0;
+
+    border: 2px solid #3a5a73;
+    border-radius: 6px;
+
+    padding: 8px 14px;
+    font-size: 105%;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#next:hover {
+    background: #27475f;
+    border-color: #5fa8d3;
+}
+
+#news {
+    position: absolute;
+    left: 50%;
+    width: 50%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+#news th,
+#news td {
+    width: 50%;
+    padding: 10px;
+    font-size: 135%;
+}
+
+p {
+    font-size: 120%;
+}
+
+#scanCounter {
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+
+    background: #1c2f3f;
+    color: #d6e2f0;
+
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #3a5a73;
+}
+
+#timeUpOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: #0a0f14;
+    color: #ff4d4d;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+}
+
+#timeUpOverlay h1 {
+    font-size: 4em;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.02),
+        rgba(255,255,255,0.02) 1px,
+        transparent 2px,
+        transparent 4px
+    );
+
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+
+    body {
+        background: #0f1a24; 
+    }
+
+    #name, #information {
+        width: 100%;
+        float: none;
+    }
+
+    #name {
+        font-size: 87%;
+    }
+    
+
+    #scanCounter {
+        top: 10px;
+        bottom: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 14px;
+        padding: 6px 10px;
+        opacity: 0.9;
+    }
+
+    #news {
+        position: static;   
+        width: 100%;
+        left: 0;
+        margin-top: 10px;
+}
+
+
+}
+
+        </style>
+    </head>
+
+    <body>
+        <div id="name">
+    	     <h1> Berit Åkerlund </h1>
+             <img src="images/c8.png" width = 52%, height = 52%>
+        </div>
+        <div id="information">
+            <h1>Information</h1>
+            <table id="info">
+                <tr>
+                    <td style="width:33%; text-align: center; font-size: 125%;">Ålder: 82</td>
+                </tr>
+            </table>
+            <br> 
+            <h2 id="story">"Lorem Ipsum is simply dummy text of the printing and typesetting t  typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."</h2>
+            
+            <br>
+            <button id="next" style="display:none;" onclick="location.href='c8b.html'">
+                Sida 2
+            </button>
+            <hr>
+
+            <div id="criminalRecord" style="display:none;">
+                <h2>Brottsregister</h2>
+                <p>Här finns det inget</p>
+            </div>
+            <div id="rumor" style="display:none;">
+                <table id="news">
+                    <tr>
+                        <th>Rykten</th>
+                        <th>Nyheter</th>
+                    </tr>
+                    <tr>
+                        <td>Inga rykten</td>
+                        <td>Saknar historik</td>
+                        </tr>
+                </table>
+            </div>
+            <div id="trail" style="display:none;">
+                <h2>Spår</h2>
+                <p>Saknar tydliga spår</p>
+            </div>
+        </div>
+            <div id="scanCounter"></div>
+            <div id="timeUpOverlay">
+                <h1>Tiden är slut!</h1>
+            </div>
+        
+        <script>
+            let visited2 = localStorage.getItem("c8b");
+
+            if (visited2) {
+            document.getElementById("next").style.display = "block";
+            }
+        </script>
+        <script>
+            let role = localStorage.getItem("playerRole");
+
+            if (role === "arkivarie") {
+            document.getElementById("criminalRecord").style.display = "block";
+            }
+            if (role === "journalist") {
+            document.getElementById("rumor").style.display = "block";
+            }
+            if (role === "obducent") {
+            document.getElementById("trail").style.display = "block";
+            }
+        </script>
+        <script>
+            let timeLeft = Number(localStorage.getItem("timeLeft"));
+
+            if (timeLeft === null) {
+            alert("Skanna startkoden först!");
+            }
+
+            timeLeft = Number(timeLeft);
+
+            if (timeLeft <= 0) {
+            document.getElementById("timeUpOverlay").style.display = "flex";
+            } else {
+            timeLeft -= 10;
+            localStorage.setItem("timeLeft", timeLeft);
+            }
+        </script>
+        <script>
+            let time = Number(localStorage.getItem("timeLeft"));
+
+            let hours = Math.floor(time / 60);
+            let minutes = time % 60;
+
+            document.getElementById("scanCounter").innerText =
+            "Tid kvar: " + hours + "h " + minutes + "m";
+        </script>
+        
+        </body> 
+</html>
