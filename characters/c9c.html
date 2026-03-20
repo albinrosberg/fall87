@@ -270,10 +270,9 @@ body::after {
         
         <script>
             localStorage.setItem("c9c", "true");
-            
-            if (visited3) {
-            document.getElementById("next").style.display = "block";
-            }
+
+            let visited3 = localStorage.getItem("c9c");
+
         </script>
         <script>
             let role = localStorage.getItem("playerRole");
