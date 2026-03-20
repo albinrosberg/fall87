@@ -77,7 +77,24 @@ hr {
     transition: 0.2s;
 }
 
-#next:hover {
+#previous {
+    position: absolute;
+    left: 52%;
+
+    background: #1c2f3f;
+    color: #d6e2f0;
+
+    border: 2px solid #3a5a73;
+    border-radius: 6px;
+
+    padding: 8px 14px;
+    font-size: 105%;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+
+#next:hover, #previous:hover {
     background: #27475f;
     border-color: #5fa8d3;
 }
@@ -189,6 +206,9 @@ body::after {
         left: 0;
         margin-top: 10px;
 }
+    #previous {
+        left: 20px;
+    }
 
 
 }
@@ -209,12 +229,12 @@ body::after {
                 </tr>
             </table>
             <br> 
-            <h2 id="story">"Jag var påväg hem från en kompis... sen sprang någon in i mig."</h2>
-            <h2 id="story">"Jag hann inte se dem innan de försvann, men det var någon som brände i min näsa när de sprang in i mig."</h2>
+            <h2 id="story">"Min polare sa att det ofta är konstiga saker som händer här."</h2>
+            <h2 id="story">"Att saker försvinner och inte sköts om..."</h2>
             
             <br>
-            <button id="next" style="display:none;" onclick="location.href='c17b.html'">
-                Sida 2
+            <button id="previous" style="display:none;" onclick="location.href='c17a.html'">
+                Sida 1
             </button>
             <hr>
 
@@ -245,10 +265,13 @@ body::after {
             </div>
         
         <script>
-            let visited2 = localStorage.getItem("c17b");
+            let visited = localStorage.getItem("c17b");
 
-            if (visited2) {
+            if (visited) {
             document.getElementById("next").style.display = "block";
+            } 
+            else {
+            localStorage.setItem("c17b", "true");
             }
         </script>
         <script>

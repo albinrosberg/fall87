@@ -6,7 +6,7 @@
         <link rel="shortcut icon" type="image/png" href="../logo.png">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset='utf-8'>
-        <title>Joel Holst</title> 
+        <title>Astrid Lundemark</title> 
         <link rel='stylesheet' href='style.css'>
         <style>
 
@@ -77,7 +77,24 @@ hr {
     transition: 0.2s;
 }
 
-#next:hover {
+#previous {
+    position: absolute;
+    left: 52%;
+
+    background: #1c2f3f;
+    color: #d6e2f0;
+
+    border: 2px solid #3a5a73;
+    border-radius: 6px;
+
+    padding: 8px 14px;
+    font-size: 105%;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+
+#next:hover, #previous:hover {
     background: #27475f;
     border-color: #5fa8d3;
 }
@@ -190,6 +207,9 @@ body::after {
         margin-top: 10px;
 }
 
+    #previous {
+        left: 20px;
+    }
 
 }
 
@@ -198,29 +218,33 @@ body::after {
 
     <body>
         <div id="name">
-    	     <h1> Joel Holst </h1>
-             <img src="images/c17.png" width = 52%, height = 52%>
+    	     <h1> Astrid Lundemark </h1>
+             <img src="images/c19.png" width = 52%, height = 52%>
         </div>
         <div id="information">
             <h1>Information</h1>
             <table id="info">
                 <tr>
-                    <td style="width:33%; text-align: center; font-size: 125%;">Ålder: 15</td>
+                    <td style="width:33%; text-align: center; font-size: 125%;">Ålder: 38</td>
                 </tr>
             </table>
             <br> 
-            <h2 id="story">"Jag var påväg hem från en kompis... sen sprang någon in i mig."</h2>
-            <h2 id="story">"Jag hann inte se dem innan de försvann, men det var någon som brände i min näsa när de sprang in i mig."</h2>
+            <h2 id="story">"Folk har en tendens att lämna efter sig en massa... doft... rester... skräp... men... eh"</h2>
             
             <br>
-            <button id="next" style="display:none;" onclick="location.href='c17b.html'">
-                Sida 2
+            <button id="previous" onclick="location.href='c19a.html'">
+                Sida 1
             </button>
+
+            <button id="next" style="display:none;" onclick="location.href='c19c.html'">
+                Sida 3
+            </button>
+            <br><br>
             <hr>
 
             <div id="criminalRecord" style="display:none;">
                 <h2>Brottsregister</h2>
-                <p>Här finns det inget</p>
+                <p>Arbestmiljöbrott - 2017</p>
             </div>
             <div id="rumor" style="display:none;">
                 <table id="news">
@@ -236,7 +260,7 @@ body::after {
             </div>
             <div id="trail" style="display:none;">
                 <h2>Spår</h2>
-                <p>Saknar tydliga spår</p>
+                <p>Svettig</p>
             </div>
         </div>
             <div id="scanCounter"></div>
@@ -245,10 +269,13 @@ body::after {
             </div>
         
         <script>
-            let visited2 = localStorage.getItem("c17b");
+            let visited = localStorage.getItem("c19b");
 
-            if (visited2) {
+            if (visited) {
             document.getElementById("next").style.display = "block";
+            } 
+            else {
+            localStorage.setItem("c19b", "true");
             }
         </script>
         <script>
