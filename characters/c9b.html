@@ -77,11 +77,27 @@ hr {
     transition: 0.2s;
 }
 
-#next:hover {
+#previous {
+    position: absolute;
+    left: 52%;
+
+    background: #1c2f3f;
+    color: #d6e2f0;
+
+    border: 2px solid #3a5a73;
+    border-radius: 6px;
+
+    padding: 8px 14px;
+    font-size: 105%;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+
+#next:hover, #previous:hover {
     background: #27475f;
     border-color: #5fa8d3;
 }
-
 #news {
     position: absolute;
     left: 50%;
@@ -209,13 +225,17 @@ body::after {
                 </tr>
             </table>
             <br> 
-            <h2 id="story">"Du får hålla det kort. Jag har inte tid för ditt babbel..."</h2>
-            <h2 id="story">"Ni har tillräckligt bra koll på mig för att veta att min korv är viktigare för mig än någon död tant."</h2>
-            <h2 id="story">"Har du fler dumma frågor eller får jag återvända till min grill nu!?"</h2>
+            <h2 id="story">"Har du inget bättre för dig än att terrorisera mig?!"</h2>
+            <h2 id="story">"Jag har inget mer att säga. Tanten förkänade det säkert."</h2>
             
             
-            <button id="next" style="display:none;" onclick="location.href='c9b.html'">
-                Sida 2
+            
+            <button id="previous" onclick="location.href='c9a.html'">
+                Sida 1
+            </button>
+
+            <button id="next" style="display:none;" onclick="location.href='c9c.html'">
+                Sida 3
             </button>
             <br><br>
             <hr>
@@ -236,7 +256,7 @@ body::after {
                         <th>Nyheter</th>
                     </tr>
                     <tr>
-                        <td>Inga rykten</td>
+                        <td>Sågs kasta ner något i elden efter du lämnat första gången</td>
                         <td>Askedahl på fri fot</td>
                         </tr>
                 </table>
@@ -252,9 +272,11 @@ body::after {
             </div>
         
         <script>
-            let visited2 = localStorage.getItem("c9b");
+            localStorage.setItem("c9b", "true");
 
-            if (visited2) {
+            let visited3 = localStorage.getItem("c9c");
+
+            if (visited3) {
             document.getElementById("next").style.display = "block";
             }
         </script>
