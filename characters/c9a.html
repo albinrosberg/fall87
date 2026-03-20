@@ -252,11 +252,13 @@ body::after {
             </div>
         
         <script>
-            let visited2 = localStorage.getItem("c9b");
+            let visited = localStorage.getItem("c9a");
 
-            if (visited2) {
-            document.getElementById("next").style.display = "block";
-            }
+            if (visited) {
+            window.location.href = "c9b.html";
+            } else {
+            localStorage.setItem("c9a", "true");
+            }   
         </script>
         <script>
             let role = localStorage.getItem("playerRole");
