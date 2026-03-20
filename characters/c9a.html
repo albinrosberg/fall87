@@ -255,10 +255,11 @@ body::after {
             let visited = localStorage.getItem("c9a");
 
             if (visited) {
-            window.location.href = "c9b.html";
-            } else {
+            document.getElementById("next").style.display = "block";
+            } 
+            else {
             localStorage.setItem("c9a", "true");
-            }   
+            }
         </script>
         <script>
             let role = localStorage.getItem("playerRole");
