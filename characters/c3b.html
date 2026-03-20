@@ -266,13 +266,14 @@ body::after {
             </div>
         
         <script>
-            localStorage.setItem("c3b", "true");
-            localStorage.setItem("c9c", "true");
+            let visited = localStorage.getItem("c3a");
+            let visited2 = localStorage.getItem("c9c");
 
-            let visited3 = localStorage.getItem("c3c");
-
-            if (visited3) {
+            if (visited, visited2) {
             document.getElementById("next").style.display = "block";
+            }
+            else {
+            localStorage.setItem("c3a", "true");
             }
         </script>
         <script>
