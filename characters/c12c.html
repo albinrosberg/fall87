@@ -6,7 +6,7 @@
         <link rel="shortcut icon" type="image/png" href="../logo.png">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset='utf-8'>
-        <title>Leif Lindell</title> 
+        <title>Hugo Strauss</title> 
         <link rel='stylesheet' href='style.css'>
         <style>
 
@@ -92,6 +92,7 @@ hr {
     cursor: pointer;
     transition: 0.2s;
 }
+
 
 #next:hover, #previous:hover {
     background: #27475f;
@@ -205,6 +206,9 @@ body::after {
         left: 0;
         margin-top: 10px;
 }
+    #previous {
+        left: 20px;
+    }
 
 
 }
@@ -214,40 +218,38 @@ body::after {
 
     <body>
         <div id="name">
-    	     <h1> Leif Lindell </h1>
-             <img src="images/c1.png" width = 52%, height = 52%>
+    	     <h1> Hugo Strauss </h1>
+             <img src="images/c12.png" width = 52%, height = 52%>
         </div>
         <div id="information">
             <h1>Information</h1>
             <table id="info">
                 <tr>
-                    <td style="width:33%; text-align: center; font-size: 125%;">Ålder: 62</td>
+                    <td style="width:33%; text-align: center; font-size: 125%;">Ålder: 35</td>
                 </tr>
             </table>
             <br> 
-            <h2 id="story">"Jag träffade Berit (#8) inte så långt innan ni kom."</h2>
-            <h2 id="story">"Hon hostade väldigt mycket, men... det var något som kändes lite kosntigt, lite raspigt..."</h2>
+            <h2 id="story">"Den var ingen annan där då, men... jag lovar... jag var inte heller där."</h2>
             
-            <button id="previous" onclick="location.href='c1b.html'">
+            <br>
+            <button id="next" style="display:none;" onclick="location.href='c12b.html'">
                 Sida 2
             </button>
-
-            <br><br>
             <hr>
 
             <div id="criminalRecord" style="display:none;">
                 <h2>Brottsregister</h2>
-                <p>Här finns det inget</p>
+                <p>Arbestmiljöbrott - 2019</p>
             </div>
             <div id="rumor" style="display:none;">
                 <table id="news">
                     <tr>
-                        <th>God vän till #8</th>
+                        <th>Rykten</th>
                         <th>Nyheter</th>
                     </tr>
                     <tr>
                         <td>Inga rykten</td>
-                        <td>Saknar historik</td>
+                        <td>OS drömmen över för Strauss</td>
                         </tr>
                 </table>
             </div>
@@ -256,15 +258,15 @@ body::after {
                 <p>Saknar tydliga spår</p>
             </div>
         </div>
-        <div id="scanCounter"></div>
+            <div id="scanCounter"></div>
             <div id="timeUpOverlay">
                 <h1>Tiden är slut!</h1>
             </div>
         
         <script>
-            localStorage.setItem("c1c", "true");
+            localStorage.setItem("c9c", "true");
 
-            let visited3 = localStorage.getItem("c1c");
+            let visited3 = localStorage.getItem("c9c");
 
         </script>
         <script>

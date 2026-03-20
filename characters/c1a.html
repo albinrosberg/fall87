@@ -209,7 +209,8 @@ body::after {
                 </tr>
             </table>
             <br> 
-            <h2 id="story">"Lorem Ipsum is simply dummy text of the printing and typesetting t  typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."</h2>
+            <h2 id="story">"Det fanns många fina fåglar här idag, eller i alla fall en stund. Innan de... flydde eller något."</h2>
+            <h2 id="story">"Jag hörde något kosntigt rop när jag var på toaletten."</h2>
             
             <button id="next" style="display:none;" onclick="location.href='c1b.html'">
                 Sida 2
@@ -228,7 +229,7 @@ body::after {
                         <th>Nyheter</th>
                     </tr>
                     <tr>
-                        <td>Inga rykten</td>
+                        <td>God vän till #8</td>
                         <td>Saknar historik</td>
                         </tr>
                 </table>
@@ -244,10 +245,13 @@ body::after {
             </div>
         
         <script>
-            let visited2 = localStorage.getItem("c1b");
+            let visited = localStorage.getItem("c1a");
 
-            if (visited2) {
+            if (visited) {
             document.getElementById("next").style.display = "block";
+            } 
+            else {
+            localStorage.setItem("c1a", "true");
             }
         </script>
         <script>
