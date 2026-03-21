@@ -215,6 +215,7 @@ body::after {
             <button id="next" style="display:none;" onclick="location.href='c19b.html'">
                 Sida 2
             </button>
+            <br><br>
             <hr>
 
             <div id="criminalRecord" style="display:none;">
@@ -278,7 +279,7 @@ body::after {
             if (timeLeft <= 0) {
             document.getElementById("timeUpOverlay").style.display = "flex";
             } else {
-            timeLeft -= 10;
+            timeLeft -= 5;
             localStorage.setItem("timeLeft", timeLeft);
             }
         </script>

@@ -246,10 +246,13 @@ body::after {
             </div>
         
         <script>
-            let visited2 = localStorage.getItem("c5b");
+            let visited = localStorage.getItem("c5a");
 
-            if (visited2) {
+            if (visited) {
             document.getElementById("next").style.display = "block";
+            } 
+            else {
+            localStorage.setItem("c5a", "true");
             }
         </script>
         <script>
@@ -277,7 +280,7 @@ body::after {
             if (timeLeft <= 0) {
             document.getElementById("timeUpOverlay").style.display = "flex";
             } else {
-            timeLeft -= 10;
+            timeLeft -= 5;
             localStorage.setItem("timeLeft", timeLeft);
             }
         </script>

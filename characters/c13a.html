@@ -229,8 +229,8 @@ body::after {
                         <th>Nyheter</th>
                     </tr>
                     <tr>
-                        <td>Inga rykten</td>
                         <td>Tillsammans med #20</td>
+                        <td>Saknar historik</td>
                         </tr>
                 </table>
             </div>
@@ -276,7 +276,7 @@ body::after {
             if (timeLeft <= 0) {
             document.getElementById("timeUpOverlay").style.display = "flex";
             } else {
-            timeLeft -= 10;
+            timeLeft -= 5;
             localStorage.setItem("timeLeft", timeLeft);
             }
         </script>

@@ -212,9 +212,10 @@ body::after {
             <h2 id="story">"Tror du har större chans att få en ace än att få Wilhelm (#9) att prata med dig."</h2>
             <h2 id="story">"Han är alltid här... och är ivägen. Tror att alla har något emot honom... skulle inte förvåna mig om..."</h2>
             <br>
-            <button id="next" style="display:none;" onclick="location.href='c3b.html'">
+            <button id="next" style="display:none;" onclick="location.href='c1b.html'">
                 Sida 2
             </button>
+            <br><br>
             <hr>
 
             <div id="criminalRecord" style="display:none;">
@@ -245,10 +246,13 @@ body::after {
             </div>
         
         <script>
-            let visited2 = localStorage.getItem("c3b");
+            let visited = localStorage.getItem("c3a");
 
-            if (visited2) {
+            if (visited) {
             document.getElementById("next").style.display = "block";
+            } 
+            else {
+            localStorage.setItem("c3a", "true");
             }
         </script>
         <script>
@@ -276,7 +280,7 @@ body::after {
             if (timeLeft <= 0) {
             document.getElementById("timeUpOverlay").style.display = "flex";
             } else {
-            timeLeft -= 10;
+            timeLeft -= 5;
             localStorage.setItem("timeLeft", timeLeft);
             }
         </script>
